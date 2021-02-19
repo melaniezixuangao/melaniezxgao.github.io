@@ -139,6 +139,10 @@ nav h4 a:focus, nav h4 a:hover, nav h4 a:active {
   background-color: inherit;
 }
 
+img{
+  object-fit: contain;
+  flex-grow: 1;
+}
 
 /* HEADER AND NAGIVATION BAR*/
 nav{
