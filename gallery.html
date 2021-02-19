@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f1f1f1;
+  padding: 20px;
+  font-family: Arial;
+}
+
+/* Center website */
+.main {
+  max-width: 1000px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 50px;
+  word-break: break-all;
+}
+
+.row {
+  margin: 10px -16px;
+}
+
+/* Add padding BETWEEN each column */
+.row, .row > .column {
+  padding: 8px;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  display: none; /* Hide all elements by default */
+}
+
+/* Clear floats after rows */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Content */
+.content {
+  background-color: white;
+  padding: 10px;
+  border:1px;
+}
+
+/* The "show" class is added to the filtered elements */
+.show {
+  display: block;
+}
+
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #ddd;
+}
+
+.btn.active {
+  background-color: #666;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+<!-- MAIN (Center website) -->
+<div class="main">
+
+
+<div id="myBtnContainer">
+  <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+  <button class="btn" onclick="filterSelection('projects')"> Projects</button>
+  <button class="btn" onclick="filterSelection('artworks')"> Artworks</button>
+  <button class="btn" onclick="filterSelection('photography')"> Photography</button>
+</div>
+
+<!-- Portfolio Gallery Grid -->
+<div class="row">
+  <div class="column projects">
+    <div class="content">
+      <img src="images/project1.jpg" alt="project1" style="width:100%">
+      <h4>Ithaca Apple Harvest Festival Website</h4>
+      <p>Created a website  for the festival through the entire design process in INFO1300.</p>
+    </div>
+  </div>
+  <div class="column projects">
+    <div class="content">
+    <img src="images/project2.jpg" alt="project2" style="width:100%">
+      <h4>Graphic Novel</h4>
+      <p>A graphic novel created to raise awarness of harmful sterotypes distributed to my high school.</p>
+    </div>
+  </div>
+  <div class="column projects">
+    <div class="content">
+    <img src="images/project3.jpg" alt="project3" style="width:100%">
+      <h4>Personal Website</h4>
+      <p>🚧Building a personal website using HTML, CSS, and JavaScript.</p>
+    </div>
+  </div>
+
+  <div class="column artworks">
+    <div class="content">
+      <img src="images/art1.jpg" alt="art1" style="width:100%">
+      <h4>Studio work</h4>
+      <p>An artwork created in DEA 1101 Studio.</p>
+    </div>
+  </div>
+  <div class="column artworks">
+    <div class="content">
+      <img src="images/art1.jpg" alt="art1" style="width:100%">
+      <h4>Studio work</h4>
+      <p>An artwork created in DEA 1101 Studio.</p>
+    </div>
+  </div>
+  <div class="column artworks">
+    <div class="content">
+    <img src="images/art2.jpg" alt="art2" style="width:100%">
+      <h4>Studio work</h4>
+      <p>A book cover for Florence Knoll's furniture.</p>
+    </div>
+  </div>
+  <div class="column artworks">
+    <div class="content">
+    <img src="images/art3.jpg" alt="art3" style="width:100%">
+      <h4>Sketch of Hutong</h4>
+      <p>Hutong, a traditional Beijing resident, is my favorite feature of Beijing.</p>
+    </div>
+  </div>
+
+  <div class="column photography">
+    <div class="content">
+      <img src="images/photo1.jpg" alt="photo1" style="width:100%">
+      <h4>Berlin Collage</h4>
+      <p>Amazed by the architecture in Berlin, I created this collage using images I took during a trip.</p>
+    </div>
+  </div>
+  <div class="column photography">
+    <div class="content">
+    <img src="images/photo3.jpg" alt="photo2" style="width:100%">
+      <h4>Migrant School</h4>
+      <p>I took a series of photo when volunteering at a migrant school, try to capture the characteristics of the children.</p>
+    </div>
+  </div>
+  <div class="column photography">
+    <div class="content">
+    <img src="images/photo4.jpg" alt="Car" style="width:100%">
+      <h4>Woman</h4>
+      <p>Buildings in Berlin do not have a lot of colors, so I wonder what would they look like with more colors.</p>
+    </div>
+  </div>
+<!-- END GRID -->
+</div>
+
+<!-- END MAIN -->
+</div>
+
+<h1> More on the way! </h1>
+
+<script>
+filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("column");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) AddClass(x[i], "show");
+  }
+}
+
+function AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
+
+function RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+// Add active class to the current button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
+
+</body>
+</html>
