@@ -54,6 +54,7 @@ h3{
   margin-bottom: 0px;
   font-family: "ubuntu","Arial",sans-serif;
   font-size: 30px;
+  text-align: left;
 }
 
 h4{
@@ -74,7 +75,7 @@ p{
   cursor: pointer;
 }
 
-#welcome{
+.welcome{
   text-align:center;
   font-family:Helvetica,Arial,sans-serif;
   font-size: 20px;
@@ -149,7 +150,7 @@ nav h4 a:focus, nav h4 a:hover, nav h4 a:active {
 nav{
   display: flex;
   flex-direction: row;
-  margin-bottom: 25px;
+  margin-bottom: 10px;
 }
 
 nav ul {
@@ -259,4 +260,8 @@ footer{
 
 .btn.active {
   background-color:#4FE2C1;
+}
+
+.link {
+    color: red
 }
