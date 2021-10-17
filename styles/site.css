@@ -63,10 +63,15 @@ h4{
   font-weight: bold;
 }
 
+h5{
+    text-align: left;
+    margin:0.5px;
+}
+
 p{
   font-size: 20px;
-  line-height: 1.5em;
-  font-family:'Arial','Helvetica',san-serif;
+  line-height: 1.2em;
+  font-family:serif;
   text-align: left;
 }
 
@@ -165,7 +170,7 @@ nav ul {
 
 .current-page{
   /* the current tab on nagivation bar*/
-  font-weight:bold;
+  font-weight: bold;
 }
 
 /* FOOTER*/
@@ -264,4 +269,15 @@ footer{
 
 .link {
     color: red
+}
+
+/* PAGE SETTING FOR experiences.html*/
+.experience-heading {
+    text-align: left;
+    margin: 2px;
+    font-size: 18px;
+}
+
+.subpage-heading{
+    margin-bottom: 20px;
 }
