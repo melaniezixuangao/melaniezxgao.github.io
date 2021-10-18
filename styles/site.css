@@ -139,7 +139,6 @@ img{
   flex-grow: 1;
 }
 
-
 /* HOVER*/
 nav ul li a:focus, nav ul li a:hover, nav ul li a:active {
   color: #4FE2C1;
@@ -268,7 +267,7 @@ footer{
 }
 
 .link {
-    color: red
+    color: green;
 }
 
 /* PAGE SETTING FOR experiences.html*/
